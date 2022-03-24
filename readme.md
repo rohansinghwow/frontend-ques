@@ -23,7 +23,8 @@
 
 
 
-```POST  http://localhost:4000/questions
+```
+POST  http://localhost:4000/questions
 Content-Type: application/json
 
 {
@@ -32,7 +33,8 @@ Content-Type: application/json
 }
 ```
 
-```PATCH  http://localhost:4000/questions/:id
+``` 
+PATCH  http://localhost:4000/questions/:id
 Content-Type: application/json
 
 {
