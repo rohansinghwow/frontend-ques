@@ -38,8 +38,8 @@ PATCH  http://localhost:4000/questions/:id
 Content-Type: application/json
 
 {
-    "questionTitle" : "What is your last name ?",
-    "answer" : "My name is Son"
+    "questionTitle" : "What is your age ?",
+    "answer" : "I'm only 231 years old lol"
 }
 ```
 
