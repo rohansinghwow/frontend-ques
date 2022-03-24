@@ -6,7 +6,7 @@
 ``` npm run serverStart```
 
 # Important Files
-``` .env ``` - DATABASE_URL=mongodb-URL
+``` .env ``` - **DATABASE_URL=mongodb-URL**
 
 ``` route.rest ``` - **for testing the endpoints in VS Code** 
 
