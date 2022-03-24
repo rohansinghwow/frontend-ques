@@ -23,7 +23,7 @@
 
 
 
-` POST  http://localhost:4000/questions
+```POST  http://localhost:4000/questions
 Content-Type: application/json
 
 {
@@ -31,15 +31,15 @@ Content-Type: application/json
     "answer" : "My name is Goku"
 }
 `
-`
-PATCH  http://localhost:4000/questions/:id
+
+```PATCH  http://localhost:4000/questions/:id
 Content-Type: application/json
 
 {
     "questionTitle" : "What is your last name ?",
     "answer" : "My name is Son"
 }
-`
+```
 
 
 ```DELETE http://localhost:4000/questions/:id```
