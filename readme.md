@@ -6,7 +6,7 @@
 ``` npm run serverStart```
 
 # Important Files
-``` .env ``` - **DATABASE_URL=mongodb-URL**
+``` .env ``` - ```DATABASE_URL=mongodb-URL```
 
 ``` route.rest ``` - **for testing the endpoints in VS Code** 
 
@@ -15,6 +15,9 @@
 **Extension ID -  humao.rest-client**
 
 # Endpoints
+**To change the Port number**
+
+```const PORT``` **= whatever you like**
 
 ```GET http://localhost:4000/questions```
 
@@ -39,7 +42,7 @@ Content-Type: application/json
 
 {
     "questionTitle" : "What is your age ?",
-    "answer" : "I'm only 231 years old lol"
+    "answer" : " 231 years "
 }
 ```
 
