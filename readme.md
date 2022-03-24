@@ -9,6 +9,7 @@
 ``` .env ``` - DATABASE_URL=mongodb-URL
 
 ``` route.rest ``` - **for testing the endpoints in VS Code** 
+
 **Extension Name - REST Client**
 **Extension ID -  humao.rest-client**
 
