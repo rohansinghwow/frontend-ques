@@ -30,7 +30,7 @@ Content-Type: application/json
     "questionTitle" : "What is your name ?",
     "answer" : "My name is Goku"
 }
-`
+```
 
 ```PATCH  http://localhost:4000/questions/:id
 Content-Type: application/json
