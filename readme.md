@@ -23,14 +23,11 @@
 
 ```GET http://localhost:4000/questions```
 
-## Get a specific question based on id
-
-```GET http://localhost:4000/questions/:id```
 
 ## Post/upload a question to the DB
 
 ```
-POST  http://localhost:4000/questions
+POST  http://localhost:4000/
 Content-Type: application/json
 
 {
@@ -38,17 +35,4 @@ Content-Type: application/json
     "answer" : "My name is Goku"
 }
 ```
-## Update certain question/answer on DB
 
-``` 
-PATCH  http://localhost:4000/questions/:id
-Content-Type: application/json
-
-{
-    "questionTitle" : "What is your age ?",
-    "answer" : " 231 years "
-}
-```
-## Delete a particular question on DB
-
-```DELETE http://localhost:4000/questions/:id```

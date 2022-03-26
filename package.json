@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rohansinghwow/frontend-ques#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "mongoose": "^6.2.8"
   },
