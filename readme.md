@@ -14,9 +14,11 @@
 
 **Extension ID -  humao.rest-client**
 
-`getQuestions.js` - fetch all the questions from server.js. imported to listQuestions.html
+`getQuestions.js` 
+fetch all the questions from server.js. imported to `listQuestions.html`
 
-`submit.js` - post a question to server.js . import to `submit.html`
+`submit.js`
+ post a question to server.js . import to `submit.html`
 
 # Endpoints
 **To change the Port number**
