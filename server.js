@@ -1,52 +1,32 @@
-require('dotenv').config()
-const express = require('express')
-const app = express()
-const PORT = 4000
-const mongoose = require('mongoose')
-const cors = require('cors')
-const Question = require('./models/question')
-app.use(cors())
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const {
+  createQuestion,
+} = require('./routes/createQuestion');
+const { getQuestions } = require('./routes/getQuestions');
 
-mongoose.connect(process.env.DATABASE_URL)
-const db = mongoose.connection
+const PORT = 4000;
 
-db.on('error' , (error)=>console.log(error))
-db.once('open' , ()=>console.log("Database Connection Succesfull ✅"))
+const app = express();
+app.use(express.static('./public'));
+app.use(cors());
+app.use(express.json());
 
-app.use(express.json())
+app.get('/questions', getQuestions);
+app.post('/', createQuestion);
 
+mongoose.connect(process.env.DATABASE_URL);
+const db = mongoose.connection;
+db.on('error', (error) => console.log(error));
+db.once('open', () => {
+  console.log('Database Connection Succesfull ✅');
 
-// Get all questions
-
-app.get('/questions' ,async (req,res)=>{
-     
-    try {
-        const questions = await Question.find()
-        res.send(questions)
-    }
-    catch (error){
-       res.status(500).json({message : error.message})
-    }
-})
-
-
-//Post a question
-
-
-app.post('/' , async(req,res)=>{
-    const postQuestion = new Question({
-        questionTitle : req.body.questionTitle,
-        answer : req.body.answer,
-        submitDate : req.body.date
-    })
-
-    try {
-        const newQuestion = await postQuestion.save()
-        res.status(201).json(newQuestion)
-    } catch (error){
-        res.status(400).json({message : error.message})
-    }
-})
-
-
-app.listen(PORT, ()=>console.log(`Server started at http://localhost:${PORT}/ ✅`))
+  // only start the express service if we are connected to mongo successfully
+  app.listen(PORT, () =>
+    console.log(
+      `Server started at http://localhost:${PORT}/ ✅`
+    )
+  );
+});
