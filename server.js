@@ -1,17 +1,32 @@
-require('dotenv').config()
-const express = require('express')
-const app = express()
-const PORT = 4000
-const mongoose = require('mongoose')
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const {
+  createQuestion,
+} = require('./routes/createQuestion');
+const { getQuestions } = require('./routes/getQuestions');
 
-mongoose.connect(process.env.DATABASE_URL)
-const db = mongoose.connection
+const PORT = 4000;
 
-db.on('error' , (error)=>console.log(error))
-db.once('open' , ()=>console.log("Database Connection Succesfull ✅"))
+const app = express();
+app.use(express.static('./public'));
+app.use(cors());
+app.use(express.json());
 
-app.use(express.json())
-//Routes
-const questionsRouter = require('./routes/questions')
-app.use('/questions' , questionsRouter)
-app.listen(PORT, ()=>console.log(`Server started at http://localhost:${PORT}/ ✅`))
+app.get('/questions', getQuestions);
+app.post('/', createQuestion);
+
+mongoose.connect(process.env.DATABASE_URL);
+const db = mongoose.connection;
+db.on('error', (error) => console.log(error));
+db.once('open', () => {
+  console.log('Database Connection Succesfull ✅');
+
+  // only start the express service if we are connected to mongo successfully
+  app.listen(PORT, () =>
+    console.log(
+      `Server started at http://localhost:${PORT}/ ✅`
+    )
+  );
+});
