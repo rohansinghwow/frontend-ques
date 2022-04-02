@@ -6,17 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Question</title>
+    <link rel="stylesheet" href="./bootstrap-min.css">
 </head>
 
 <body>
-    <a href="./submit.html">Submit a Question</a>
-    <h1>Questions</h1>
-    <div class="question-div" id="question-div">
 
+<!-- Navbar -->
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light shadow-sm rounded-bottom mt-3 py-3 px-3 mb-5">
+        <div class="container-fluid ">
+          <a class="navbar-brand  py-2 px-2 " href="#">Front Ques.</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">All Questions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./submit.html">Submit a question</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+
+      <h1><mark>Questions</mark></h1>
+    <div class="question-div my-3 row g-3" id="question-div">
+      <div class="card border-light shadow-sm rounded-3">
+            
+        
+    </div>
     </div>
     <h2 id="loading">Loading...</h2>
+
+    
+
+</div>
+
+
+    
+    
+    
 </body>
 
 <script src="./index.js"></script>
-
+<script src="./bootstrap-min.js"></script>
 </html>

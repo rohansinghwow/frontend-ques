@@ -7,7 +7,23 @@ async function getData() {
   const data = await res.json();
   loadingEl.style.display = 'none';
   data.map((item, index) => {
-    questionEl.innerHTML += `#${index} ${item.questionTitle}<br> ${item.answer} <hr>`;
+    questionEl.innerHTML += `
+    
+    <div class="col-12">
+            <div class="card border-light shadow-sm rounded-3">
+            
+                <div class="card-body">
+                    <h5 class="card-title">
+                    ${item.questionTitle}
+                    </h5>
+                    <p class="card-text">${item.answer}</p>
+                    <a href="#" class="btn btn-primary">Go to solution</a>
+                </div>
+            </div>
+        </div>
+       
+    
+    `;
   });
 }
 
