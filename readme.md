@@ -3,6 +3,7 @@
 # Installation
 
 ` npm install`
+` npm init-y`
 
 ` npm run start`
 
