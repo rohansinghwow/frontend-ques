@@ -2,14 +2,22 @@ const questionEl = document.getElementById('question');
 const answerEl = document.getElementById('answer');
 const formEl = document.getElementById('form');
 const submitEl = document.getElementById('submitBtn');
+const alertElFail = document.getElementById('alert-fail')
+const alertElSuccess = document.getElementById('alert-success')
 
 submitEl.addEventListener('click', handleSubmit);
+
+alertElFail.classList.add('d-none')
+alertElSuccess.classList.add('d-none')
+
+
 
 function handleSubmit(event) {
   event.preventDefault();
   const questionValue = questionEl.value;
   const answerValue = answerEl.value;
-
+  alertElFail.classList.add('d-none')
+  
   const options = {
     method: 'POST',
     headers: {
@@ -21,5 +29,25 @@ function handleSubmit(event) {
       answer: answerValue,
     }),
   };
-  fetch('http://localhost:4000/', options);
+  
+    fetch('http://localhost:4000/', options)
+    .then((response)=>{
+      if(!response.ok){
+        throw new Error('Please enter all fields')
+      }
+      alertElSuccess.classList.remove('d-none')
+      setInterval(()=>(
+        alertElSuccess.classList.add('d-none')
+       ) , 3000)
+
+    })
+    .catch((error)=>{
+      console.log(error)
+      const theErr = error
+      alertElFail.classList.remove('d-none')
+
+      alertElFail.textContent=theErr
+    })
+  
+  
 }

@@ -8,9 +8,12 @@ exports.createQuestion = async (req, res) => {
   });
 
   try {
+    
     const newQuestion = await postQuestion.save();
     res.status(201).json(newQuestion);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
+
 };
+
