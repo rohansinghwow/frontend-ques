@@ -32,8 +32,12 @@ function handleSubmit(event) {
   
     fetch('http://localhost:4000/', options)
     .then((response)=>{
+      console.log(response.status)
+      
       if(!response.ok){
-        throw new Error('Please enter all fields')
+        throw new Error('Server error try again !')
+      }else if(response.status === 400){
+        throw new Error('Please enter all fields dude !')
       }
       alertElSuccess.classList.remove('d-none')
       setInterval(()=>(
@@ -43,6 +47,7 @@ function handleSubmit(event) {
     })
     .catch((error)=>{
       console.log(error)
+      console.log( error)
       const theErr = error
       alertElFail.classList.remove('d-none')
 

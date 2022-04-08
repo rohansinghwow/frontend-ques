@@ -1,10 +1,12 @@
 {
-  "name": "frontend-ques",
+  "name": "frontend-quest",
   "version": "1.0.0",
-  "description": "",
+  "description": "# Installation",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "start:ui": "parcel public/pages/*.html",
+    "build": "parcel build public/pages/*.html"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,8 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "2.6.2"
   }
 }
