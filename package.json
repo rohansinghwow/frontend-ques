@@ -1,32 +1,20 @@
 {
-  "name": "frontend-quest",
-  "version": "1.0.0",
-  "description": "# Installation",
-  "main": "index.js",
+  "name": "frontend-ques",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "nodemon server.js",
-    "start:ui": "parcel public/pages/*.html",
-    "build": "parcel build public/pages/*.html"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rohansinghwow/frontend-ques.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rohansinghwow/frontend-ques/issues"
-  },
-  "homepage": "https://github.com/rohansinghwow/frontend-ques#readme",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.3",
-    "mongoose": "^6.2.8"
+    "next": "12.1.5",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
   },
   "devDependencies": {
-    "dotenv": "^16.0.0",
-    "nodemon": "^2.0.15",
-    "parcel-bundler": "^1.12.5",
-    "prettier": "2.6.2"
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.5"
   }
 }
