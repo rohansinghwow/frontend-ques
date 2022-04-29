@@ -1,0 +1,13 @@
+GET http://localhost:3000/api/hello
+
+###
+
+POST http://localhost:3000/api/hello
+content-type: application/json
+
+{
+    "prompt" : "newwww",
+    "example" : "aaaaaa",                                                                                                                                                                  
+    "rating" : "Easy"
+    
+}
